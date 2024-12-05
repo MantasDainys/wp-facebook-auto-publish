@@ -5,10 +5,11 @@
  * GitHub Plugin URI: https://github.com/MantasDainys/wp-facebook-auto-publish
  * GitHub Branch: main
  * Description: Automatically publish posts to Facebook posts
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Mantas Dainys
- * Text Domain: WPFacebookAutoPublish
+ * Text Domain: wp-facebook-auto-publish
  * Domain Path: /languages
+ * @package wp-facebook-auto-publish
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -55,7 +56,7 @@ class WPFacebookAutoPublish {
 	public function add_facebook_publish_meta_box() {
 		add_meta_box(
 			'facebook_publish_meta_box',
-			__( 'Publish on Facebook', 'WPFacebookAutoPublish' ),
+			__( 'Publish on Facebook', 'wp-facebook-auto-publish' ),
 			[ $this, 'facebook_publish_meta_box_callback' ],
 			'post',
 			'side',
@@ -67,7 +68,7 @@ class WPFacebookAutoPublish {
 		$value = get_post_meta( $post->ID, '_facebook_publish', true );
 		echo '<label for="facebook_publish">';
 		echo '<input type="checkbox" id="facebook_publish" name="facebook_publish" value="1" ' . checked( 1, $value, false ) . ' />';
-		_e( 'Publish this post on the FB page', 'WPFacebookAutoPublish' );
+		_e( 'Publish this post on the FB page', 'wp-facebook-auto-publish' );
 		echo '</label>';
 	}
 
