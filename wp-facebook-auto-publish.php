@@ -1,8 +1,11 @@
 <?php
 /**
  * Plugin Name: WP Facebook Auto Publish
+ * Plugin URI: https://github.com/MantasDainys/wp-facebook-auto-publish
+ * GitHub Plugin URI: https://github.com/MantasDainys/wp-facebook-auto-publish
+ * GitHub Branch: main
  * Description: Automatically publish posts to Facebook posts
- * Version: 1.0
+ * Version: 1.0.0
  * Author: Mantas Dainys
  * Text Domain: WPFacebookAutoPublish
  * Domain Path: /languages
