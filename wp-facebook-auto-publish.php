@@ -56,13 +56,21 @@ class WPFacebookAutoPublish {
 
 	}
 
+	public static function get_plugin_version() {
+		$plugin_file = __FILE__;
+		$plugin_data = get_file_data( $plugin_file, [
+			'Version' => 'Version',
+		]);
+		return $plugin_data['Version'] ?? 'Unknown';
+	}
+
 	function check_for_plugin_update($transient) {
 
 		if (empty($transient->checked)) {
 			return $transient;
 		}
 
-		$plugin_slug = 'wp-facebook-auto-publish/wp-facebook-auto-publish.php';
+		$plugin_slug = 'wp-facebook-auto-publish';
 		$repo_url = 'https://api.github.com/repos/MantasDainys/wp-facebook-auto-publish/releases/latest';
 
 		$response = wp_remote_get($repo_url);
@@ -75,12 +83,9 @@ class WPFacebookAutoPublish {
 
 		if (isset($release['tag_name'])) {
 			$remote_version = ltrim($release['tag_name'], 'v');
-			$current_version = '1.0.1';
-
+			$current_version = self::get_plugin_version();
 			if (version_compare($remote_version, $current_version, '>')) {
-				$plugin_data = get_plugin_data(WP_PLUGIN_DIR . '/' . $plugin_slug);
-
-				$transient->response[$plugin_slug] = (object) [
+				$transient->response[$plugin_slug.'/'.$plugin_slug.'.php'] = (object) [
 					'slug' => $plugin_slug,
 					'new_version' => $remote_version,
 					'package' => $release['zipball_url'],

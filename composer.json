@@ -1,4 +1,14 @@
 {
+    "name": "mantasdainys/wp-facebook-auto-publish",
+    "description": "Automatically publish posts to Facebook.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mantas Dainys",
+            "email": "mantas.dainys@globalusprojektai.lt"
+        }
+    ],
     "require": {
         "facebook/graph-sdk": "^5.7"
     }
