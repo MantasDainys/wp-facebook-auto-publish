@@ -10,6 +10,8 @@
         }
     ],
     "require": {
-        "facebook/graph-sdk": "^5.8"
-    }
+        "facebook/graph-sdk": "^5.7"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
