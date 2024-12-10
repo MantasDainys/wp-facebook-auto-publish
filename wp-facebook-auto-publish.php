@@ -5,7 +5,7 @@
  * GitHub Plugin URI: https://github.com/MantasDainys/wp-facebook-auto-publish
  * GitHub Branch: main
  * Description: Automatically publish posts to Facebook posts
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Mantas Dainys
  * Text Domain: wp-facebook-auto-publish
  * Domain Path: /languages

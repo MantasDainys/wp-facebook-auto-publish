@@ -44,9 +44,7 @@ jobs:
 
       - name: Upload Plugin ZIP to Release
         if: github.event_name == 'release' && github.event.action == 'published'
-        uses: actions/upload-release-asset@v1
+        uses: ncipollo/release-action@v1
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./wp-facebook-auto-publish.zip
-          asset_name: wp-facebook-auto-publish.zip
-          asset_content_type: application/zip
+          artifacts: wp-facebook-auto-publish.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
