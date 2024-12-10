@@ -36,11 +36,7 @@ jobs:
       - name: Create Plugin ZIP
         if: github.event_name == 'release' && github.event.action == 'published'
         run: |
-          PLUGIN_DIR="wp-facebook-auto-publish-build"
-          mkdir $PLUGIN_DIR
-          rsync -av --exclude="$PLUGIN_DIR" . $PLUGIN_DIR/
-          rm -rf $PLUGIN_DIR/.git $PLUGIN_DIR/.github
-          zip -r wp-facebook-auto-publish.zip $PLUGIN_DIR/
+          zip -r wp-facebook-auto-publish.zip . -x "*.git*" "*.github*" "wp-facebook-auto-publish-build/*"
 
       - name: Upload Plugin ZIP to Release
         if: github.event_name == 'release' && github.event.action == 'published'
