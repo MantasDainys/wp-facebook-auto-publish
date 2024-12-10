@@ -48,4 +48,4 @@ jobs:
         with:
           artifacts: wp-facebook-auto-publish.zip
           token: ${{ secrets.GITHUB_TOKEN }}
-          skipIfReleaseExists: true
+          replacesArtifacts: true
